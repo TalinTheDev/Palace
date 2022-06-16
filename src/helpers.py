@@ -11,13 +11,27 @@
 '''
 
 
-from os import system, name # For clearning the screen
+from os import system, name  # For clearning the screen
 
 # Function to clear the screen using os.system
 
+
 def clear():
-  system('cls' if name == 'nt' else 'clear')
+    system('cls' if name == 'nt' else 'clear')
+
 
 def forEach(list, function):
     for i, v in enumerate(list):
         function(v)
+
+# Make a deck of cards
+
+
+def makeDeck():
+    for rank in RANKS:
+        for i in range(1, 5):
+            DECK.append(rank)
+
+    # Shuffle the deck
+    shuffle(DECK)
+    return DECK
